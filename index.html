@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,7 +6,8 @@
     <title>Pokemon World</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-white font-sans min-h-screen pb-20 bg-[url('/Images/Background.png')] bg-cover bg-fixed bg-center">
+<body style="background-image: url('/public/Images/Background.png'); background-size: cover; background-attachment: fixed; background-position: center;" 
+      class="text-white font-sans min-h-screen pb-20">
 
     <header class="flex flex-col items-center pt-10 px-4">
         <h1 class="text-[#d92727] text-4xl md:text-5xl font-bold mb-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-center">
@@ -92,102 +93,7 @@
 
     <script type="module" src="./Scripts/app.js"></script>
 </body>
-</html> -->
+</html> 
 
 
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon World</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="text-white font-sans min-h-screen pb-20 bg-[url('/public/Images/Background.png')] bg-cover bg-fixed bg-center">
-
-    <header class="flex flex-col items-center pt-10 px-4">
-        <h1 class="text-[#d92727] text-4xl md:text-5xl font-bold mb-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-center">
-            WelCome To Pokemon World
-        </h1>
-        
-        <div class="flex items-center gap-4 w-full max-w-md mb-6">
-            <input id="pokemon-search" 
-                   class="w-full bg-[#1a2b4b]/90 border border-white rounded-md px-4 py-2 text-sm focus:outline-none placeholder:text-gray-400" 
-                   type="text" placeholder="Search by Name and Id....">
-            <button id="favorite-btn" class="bg-white p-1 rounded-sm hover:bg-gray-200 transition shrink-0">
-                <svg id="fav-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-black transition-all"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            </button>
-        </div>
-
-        <button id="random-btn" class="border border-white bg-[#1a2b4b]/30 px-8 py-2 rounded-md text-xl font-medium hover:bg-white hover:text-[#1a2b4b] transition-colors">
-            Random Pokemon
-        </button>
-        <p id="error-msg" class="text-red-500 mt-2 font-bold hidden">Pokemon not found!</p>
-    </header>
-
-    <main class="max-w-4xl mx-auto px-6 mt-12 space-y-10">
-
-        <section class="bg-[#278AF4]/30 backdrop-blur-md p-8 rounded-lg shadow-2xl border border-white/10">
-            <h2 class="text-2xl font-bold mb-8 text-center">My ultimate Pokémon lineup</h2>
-            <div id="lineup-container" class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-                <div class="bg-white rounded-sm aspect-square flex items-center justify-center overflow-hidden border border-gray-400">
-                    <img id="slot-0" class="w-full h-full object-contain hidden" src=""><span class="text-gray-400 text-[10px] font-bold">EMPTY</span>
-                </div>
-                <div class="bg-white rounded-sm aspect-square flex items-center justify-center overflow-hidden border border-gray-400">
-                    <img id="slot-1" class="w-full h-full object-contain hidden" src=""><span class="text-gray-400 text-[10px] font-bold">EMPTY</span>
-                </div>
-                <div class="bg-white rounded-sm aspect-square flex items-center justify-center overflow-hidden border border-gray-400">
-                    <img id="slot-2" class="w-full h-full object-contain hidden" src=""><span class="text-gray-400 text-[10px] font-bold">EMPTY</span>
-                </div>
-                <div class="bg-white rounded-sm aspect-square flex items-center justify-center overflow-hidden border border-gray-400">
-                    <img id="slot-3" class="w-full h-full object-contain hidden" src=""><span class="text-gray-400 text-[10px] font-bold">EMPTY</span>
-                </div>
-                <div class="bg-white rounded-sm aspect-square flex items-center justify-center overflow-hidden border border-gray-400">
-                    <img id="slot-4" class="w-full h-full object-contain hidden" src=""><span class="text-gray-400 text-[10px] font-bold">EMPTY</span>
-                </div>
-                <div class="bg-white rounded-sm aspect-square flex items-center justify-center overflow-hidden border border-gray-400">
-                    <img id="slot-5" class="w-full h-full object-contain hidden" src=""><span class="text-gray-400 text-[10px] font-bold">EMPTY</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-[#278AF4]/30 backdrop-blur-md p-10 rounded-lg shadow-2xl flex flex-col items-center">
-            <h3 id="poke-name" class="text-2xl font-bold mb-8 capitalize">Name: Pikachu</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full items-center">
-                <div class="bg-white p-2 rounded-sm max-w-60 mx-auto border border-white">
-                    <img id="poke-img" src="" class="w-full h-auto object-contain">
-                </div>
-                <div class="text-center">
-                    <span id="poke-type" class="text-2xl font-medium capitalize tracking-wider">Electric</span>
-                </div>
-                <div class="border-2 border-white p-6 h-full flex flex-col justify-start bg-black/10">
-                    <h4 class="text-xl font-bold mb-4">Abilities:</h4>
-                    <div id="poke-abilities" class="text-lg leading-relaxed space-y-1"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-[#278AF4]/30 backdrop-blur-md p-10 rounded-lg shadow-2xl">
-            <h4 class="text-2xl font-bold mb-6 border-b border-white/40 pb-2 inline-block">Moves:</h4>
-            <ul id="poke-moves" class="list-disc list-inside space-y-2 text-sm text-slate-100"></ul>
-        </section>
-
-        <section class="bg-[#278AF4]/30 backdrop-blur-md p-10 rounded-lg shadow-2xl text-center">
-            <h5 class="text-2xl font-bold mb-10">Evalution Path</h5>
-            <div id="evolution-path" class="flex justify-center gap-6 flex-wrap"></div>
-        </section>
-
-        <section class="bg-[#1a2b4b]/95 border border-white/20 p-6 rounded-md text-[13px] leading-relaxed shadow-lg">
-            <p>
-                <strong class="text-white">Location:</strong> 
-                <span id="poke-habitat" class="capitalize">---</span>
-                — Look for grassy patches, specific groves, or use in-game methods like special spawns or eggs for reliable catching in newer titles.
-            </p>
-        </section>
-
-    </main>
-
-    <script type="module" src="./Scripts/app.js"></script>
-</body>
-</html>
